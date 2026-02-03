@@ -4,6 +4,10 @@ import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { useAuth } from '@/context/AuthContext';
 import { useRouter } from 'next/navigation';
+import { FaHome , FaProductHunt , FaPhoneSquareAlt } from "react-icons/fa";
+import { IoInformationCircle } from "react-icons/io5";
+
+
 
 export default function Navbar() {
   const { user, signOut } = useAuth();
@@ -34,22 +38,22 @@ export default function Navbar() {
           {/* Logo */}
           <Link href="/" className="flex items-center space-x-2">
             <span className="text-2xl">🐕</span>
-            <span className="text-xl font-bold text-blue-600">Pet Care</span>
+            <span className="text-xl font-bold text-pink-600">Pet Care</span>
           </Link>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
-            <Link href="/" className="text-gray-700 hover:text-blue-600 transition">
-              Home
+            <Link href="/" className="group text-gray-700 border-2 border-gray-100  rounded-lg px-3 py-1.5 shadow-sm flex items-center space-x-1 hover:text-pink-600 hover:border-pink-500 transition">
+             <FaHome className='group-hover:scale-105 transition-transform'></FaHome> <span>Home</span>
             </Link>
-            <Link href="/products" className="text-gray-700 hover:text-blue-600 transition">
-              Products
+            <Link href="/products" className="group text-gray-700 border-2 border-gray-100  rounded-lg px-3 py-1.5 shadow-sm flex items-center space-x-1 hover:text-pink-600 hover:border-pink-500 transition">
+             <FaProductHunt></FaProductHunt> <span>Products</span>
             </Link>
-            <Link href="/#about" className="text-gray-700 hover:text-blue-600 transition">
-              About
+            <Link href="/#about" className="group text-gray-700 border-2 border-gray-100  rounded-lg px-3 py-1.5 shadow-sm flex items-center space-x-1 hover:text-pink-600 hover:border-pink-500 transition">
+             <IoInformationCircle></IoInformationCircle> <span>About</span>
             </Link>
-            <Link href="/#contact" className="text-gray-700 hover:text-blue-600 transition">
-              Contact
+            <Link href="/#contact" className="group text-gray-700 border-2 border-gray-100  rounded-lg px-3 py-1.5 shadow-sm flex items-center space-x-1 hover:text-pink-600 hover:border-pink-500 transition">
+             <FaPhoneSquareAlt></FaPhoneSquareAlt> <span>Contact</span>
             </Link>
 
             {/* Auth Section */}
@@ -57,7 +61,7 @@ export default function Navbar() {
               <div className="relative">
                 <button
                   onClick={() => setIsDropdownOpen(!isDropdownOpen)}
-                  className="flex items-center space-x-2 bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition"
+                  className="flex items-center space-x-2 bg-pink-600 text-white px-4 py-2 rounded-lg hover:bg-pink-700 transition"
                 >
                   <img 
                     src={user.photoURL || '/default-avatar.png'} 
@@ -76,14 +80,14 @@ export default function Navbar() {
                     </div>
                     <Link
                       href="/add-product"
-                      className="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 transition"
+                      className="block px-4 py-2 text-sm text-gray-700 hover:bg-pink-50 transition"
                       onClick={() => setIsDropdownOpen(false)}
                     >
                       ➕ Add Product
                     </Link>
                     <Link
                       href="/manage-products"
-                      className="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 transition"
+                      className="block px-4 py-2 text-sm text-gray-700 hover:bg-pink-50 transition"
                       onClick={() => setIsDropdownOpen(false)}
                     >
                       📦 Manage Products
@@ -100,7 +104,7 @@ export default function Navbar() {
             ) : (
               <Link
                 href="/login"
-                className="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition"
+                className="bg-pink-600 text-white px-6 py-2 rounded-lg hover:bg-pink-500 transition"
               >
                 Login
               </Link>
@@ -112,7 +116,7 @@ export default function Navbar() {
             onClick={() => setIsMenuOpen(!isMenuOpen)}
             className="md:hidden text-gray-700"
           >
-            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <svg className="w-6 h-6 text-pink-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               {isMenuOpen ? (
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
               ) : (
@@ -124,33 +128,37 @@ export default function Navbar() {
 
         {/* Mobile Menu */}
         {isMenuOpen && (
-          <div className="md:hidden py-4 border-t">
-            <Link href="/" className="block py-2 text-gray-700 hover:text-blue-600">
-              Home
+          <div className="md:hidden py-4 grid gap-2 border-t">
+            <Link href="/" className="group gap-3 text-gray-700 border-2 border-gray-100  rounded-lg px-3 py-1.5 shadow-sm flex items-center space-x-1  hover:border-none hover:bg-pink-500 hover:text-white transition">
+            <FaHome className='group-hover:scale-105 transition-transform'></FaHome>  Home
             </Link>
-            <Link href="/products" className="block py-2 text-gray-700 hover:text-blue-600">
-              Products
+            <Link href="/products" className="group gap-3 text-gray-700 border-2 border-gray-100  rounded-lg px-3 py-1.5 shadow-sm flex items-center space-x-1 hover:bg-pink-500 hover:text-white transition">
+             <FaProductHunt></FaProductHunt>  Products
             </Link>
-            <Link href="/#about" className="block py-2 text-gray-700 hover:text-blue-600">
-              About
+            <Link href="/#about" className="group gap-3 text-gray-700 border-2 border-gray-100  rounded-lg px-3 py-1.5 shadow-sm flex items-center space-x-1 hover:bg-pink-500 hover:text-white transition">
+            <IoInformationCircle></IoInformationCircle>   About
             </Link>
-            <Link href="/#contact" className="block py-2 text-gray-700 hover:text-blue-600">
-              Contact
+            <Link href="/#contact" className="group gap-3 text-gray-700 border-2 border-gray-100  rounded-lg px-3 py-1.5 shadow-sm flex items-center space-x-1 hover:bg-pink-500 hover:text-white transition">
+              <FaPhoneSquareAlt></FaPhoneSquareAlt>   Contact
             </Link>
             {user ? (
               <>
-                <Link href="/add-product" className="block py-2 text-gray-700 hover:text-blue-600">
+               <div className='flex justify-center gap-2 mt-2'>
+                 <Link href="/add-product" className="group text-gray-700 border-2 border-gray-100  rounded-lg px-3 py-1.5 shadow-sm flex items-center space-x-1 hover:text-pink-600 hover:border-pink-500 transition">
                   Add Product
                 </Link>
-                <Link href="/manage-products" className="block py-2 text-gray-700 hover:text-blue-600">
+                <Link href="/manage-products" className="group text-gray-700 border-2 border-gray-100  rounded-lg px-3 py-1.5 shadow-sm flex items-center space-x-1 hover:text-pink-600 hover:border-pink-500 transition">
                   Manage Products
                 </Link>
-                <button onClick={handleSignOut} className="block w-full text-left py-2 text-red-600">
+               </div>
+               <div className='grid justify-center mt-2'>
+                <button onClick={handleSignOut} className="group mt-2  cursor-pointer text-red-600 border-2 border-red-100  rounded-lg px-3 py-1.5 shadow-sm flex items-center space-x-1 hover:text-red-600 hover:border-red-500 transition">
                   Sign Out
                 </button>
+               </div>
               </>
             ) : (
-              <Link href="/login" className="block py-2 text-blue-600 font-semibold">
+              <Link href="/login" className="group text-blue-600 border-2 border-blue-100  rounded-lg px-3 py-1.5 shadow-sm flex items-center space-x-1 hover:text-blue-600 hover:border-blue-500 transition">
                 Login
               </Link>
             )}

@@ -42,7 +42,7 @@ export default function Home() {
   return (
     <div className="pt-16">
       {/* 1. HERO SECTION */}
-      <section className="relative bg-linear-to-br from-blue-50 to-blue-100 py-20">
+      <section className="relative bg-linear-to-br from-pink-50 to-pink-100 py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
@@ -55,13 +55,13 @@ export default function Home() {
               <div className="flex flex-col sm:flex-row gap-4">
                 <Link
                   href="/products"
-                  className="bg-pink-600 text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-blue-700 transition text-center"
+                  className="bg-pink-600 text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-pink-700 transition text-center"
                 >
                   Shop Now 🛒
                 </Link>
                 <Link
                   href="#about"
-                  className="border-2 border-pink-600 text-pink-600 px-8 py-4 rounded-lg text-lg font-semibold hover:bg-blue-50 transition text-center"
+                  className="border-2 border-pink-600 text-pink-600 px-8 py-4 rounded-lg text-lg font-semibold hover:bg-pink-50 transition text-center"
                 >
                   Learn More
                 </Link>
@@ -69,7 +69,15 @@ export default function Home() {
             </div>
             <div className="relative">
               <div className="bg-white rounded-2xl shadow-2xl p-8 transform hover:scale-105 transition duration-300">
-                <div className="text-9xl text-center mb-4">🐕‍🦺</div>
+                <div className="text-9xl text-center mb-4">
+                  <Image
+                    src="/images/hero_image.png" 
+                    alt="Dog in Winter Outfit" 
+                    width={320} 
+                    height={320}
+                    className="object-contain mx-auto"
+                  />
+                </div>
                 <p className="text-center text-gray-600 text-lg">Trusted by 10,000+ Pet Parents</p>
               </div>
             </div>
@@ -168,7 +176,7 @@ export default function Home() {
         <div className="text-center mt-12">
             <Link
               href="/products"
-              className="inline-block bg-blue-600 text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-blue-700 transition"
+              className="inline-block bg-pink-500 text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-pink-700 transition"
             >
               View All Products →
             </Link>
@@ -178,36 +186,36 @@ export default function Home() {
       
 
       {/* 5. WINTER CARE TIPS SECTION */}
-      <section className="py-20 bg-linear-to-br from-blue-600 to-blue-800 text-white">
+      <section className="py-20 bg-linear-to-br from-pink-500 to-pink-600 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold mb-4">Winter Care Tips</h2>
-            <p className="text-xl text-blue-100">Essential advice for keeping your dog safe and healthy</p>
+            <p className="text-xl text-pink-100">Essential advice for keeping your pet safe and healthy</p>
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 hover:bg-white/20 transition">
               <div className="text-4xl mb-3">❄️</div>
               <h3 className="text-xl font-bold mb-2">Limit Outdoor Time</h3>
-              <p className="text-blue-100 text-sm">Keep walks shorter during extreme cold weather.</p>
+              <p className="text-pink-100 text-sm">Keep walks shorter during extreme cold weather.</p>
             </div>
 
             <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 hover:bg-white/20 transition">
               <div className="text-4xl mb-3">🐾</div>
               <h3 className="text-xl font-bold mb-2">Check Paws Often</h3>
-              <p className="text-blue-100 text-sm">Look for cracks, ice buildup between paw pads.</p>
+              <p className="text-pink-100 text-sm">Look for cracks, ice buildup between paw pads.</p>
             </div>
 
             <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 hover:bg-white/20 transition">
               <div className="text-4xl mb-3">💧</div>
               <h3 className="text-xl font-bold mb-2">Stay Hydrated</h3>
-              <p className="text-blue-100 text-sm">Dogs need water in winter just as much as summer.</p>
+              <p className="text-pink-100 text-sm">Dogs need water in winter just as much as summer.</p>
             </div>
 
             <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 hover:bg-white/20 transition">
               <div className="text-4xl mb-3">🏠</div>
               <h3 className="text-xl font-bold mb-2">Warm Shelter</h3>
-              <p className="text-blue-100 text-sm">Provide a cozy, draft-free sleeping area indoors.</p>
+              <p className="text-pink-100 text-sm">Provide a cozy, draft-free sleeping area indoors.</p>
             </div>
           </div>
         </div>
@@ -220,30 +228,30 @@ export default function Home() {
             <div>
               <h2 className="text-4xl font-bold text-gray-900 mb-6">About WinterDogCare</h2>
               <p className="text-lg text-gray-600 mb-4">
-                Founded in 2020, we're passionate about keeping dogs safe, warm, and happy during the cold winter months.
+                Founded in 2020, we&apos;re passionate about keeping dogs safe, warm, and happy during the cold winter months.
               </p>
               <p className="text-lg text-gray-600 mb-4">
                 Our team of pet care experts and veterinarians carefully curate each product to ensure the highest quality and safety standards.
               </p>
               <p className="text-lg text-gray-600 mb-6">
-                With over 10,000 satisfied customers and counting, we're proud to be your trusted partner in winter dog care.
+                With over 10,000 satisfied customers and counting, we&apos;re proud to be your trusted partner in winter dog care.
               </p>
               <div className="flex gap-8">
                 <div>
-                  <div className="text-4xl font-bold text-blue-600">10K+</div>
+                  <div className="text-4xl font-bold text-pink-500">10K+</div>
                   <div className="text-gray-600">Happy Customers</div>
                 </div>
                 <div>
-                  <div className="text-4xl font-bold text-blue-600">50+</div>
+                  <div className="text-4xl font-bold text-pink-500">50+</div>
                   <div className="text-gray-600">Premium Products</div>
                 </div>
                 <div>
-                  <div className="text-4xl font-bold text-blue-600">100%</div>
+                  <div className="text-4xl font-bold text-pink-500">100%</div>
                   <div className="text-gray-600">Satisfaction Rate</div>
                 </div>
               </div>
             </div>
-            <div className="bg-linear-to-br from-blue-400 to-blue-600 rounded-2xl p-12 text-center">
+            <div className="bg-linear-to-br from-pink-400 to-pink-600 rounded-2xl p-12 text-center">
               <div className="text-9xl flex  justify-center mb-4">
                <Image
                 src="/images/images.png" 
@@ -253,7 +261,7 @@ export default function Home() {
       className="object-contain"
                />
               </div>
-              <p className="text-white text-xl font-semibold">Your Dogs Winter Wellness Matters to Us</p>
+              <p className="text-white text-xl font-semibold">Your Pet Wellness Matters to Us</p>
             </div>
           </div>
         </div>
@@ -267,17 +275,17 @@ export default function Home() {
             Join thousands of pet parents who trust us for their winter dog care needs.
           </p>
 
-          <div className="bg-blue-50 rounded-2xl p-8 mb-8">
+          <div className="bg-pink-50 rounded-2xl p-8 mb-8">
             <div className="grid md:grid-cols-3 gap-6 mb-8">
               <div>
                 <div className="text-3xl mb-2">📧</div>
                 <div className="font-semibold text-gray-900">Email Us</div>
-                <div className="text-gray-600">support@winterdogcare.com</div>
+                <div className="text-gray-600">support@petcare.com</div>
               </div>
               <div>
                 <div className="text-3xl mb-2">📞</div>
                 <div className="font-semibold text-gray-900">Call Us</div>
-                <div className="text-gray-600">1-800-DOG-CARE</div>
+                <div className="text-gray-600">9689001122</div>
               </div>
               <div>
                 <div className="text-3xl mb-2">💬</div>
@@ -289,12 +297,12 @@ export default function Home() {
 
           <Link
             href="/products"
-            className="inline-block bg-blue-600 text-white px-12 py-5 rounded-lg text-xl font-semibold hover:bg-blue-700 transition transform hover:scale-105"
+            className="inline-block bg-pink-600 text-white px-12 py-5 rounded-lg text-xl font-semibold hover:bg-pink-500 transition transform hover:scale-102"
           >
             Start Shopping Now 🛒
           </Link>
 
-          <p className="mt-6 text-gray-500">Free shipping on orders over $50 • 30-day money-back guarantee</p>
+          <p className="mt-6 text-gray-500">Free shipping on orders over 3199 Taka, within Dhaka city only <br></br> • 30-day money-back guarantee</p>
         </div>
       </section>
 
