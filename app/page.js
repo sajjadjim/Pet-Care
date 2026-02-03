@@ -1,8 +1,9 @@
 'use client';
 
+import Image from 'next/image';
 import Link from 'next/link';
 import { useState, useEffect } from 'react';
-
+import Review from '../components/home/review/review';
 const gradientColors = [
   'from-blue-400 to-blue-600',
   'from-purple-400 to-purple-600',
@@ -41,12 +42,12 @@ export default function Home() {
   return (
     <div className="pt-16">
       {/* 1. HERO SECTION */}
-      <section className="relative bg-gradient-to-br from-blue-50 to-blue-100 py-20">
+      <section className="relative bg-linear-to-br from-blue-50 to-blue-100 py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
               <h1 className="text-5xl md:text-6xl font-bold text-gray-900 mb-6">
-                Keep Your Dog <span className="text-blue-600">Warm & Happy</span> This Winter
+                Keep Your Dog <span className="text-pink-500">Warm & Happy</span> This Winter
               </h1>
               <p className="text-xl text-gray-600 mb-8">
                 Premium winter care products designed to protect your furry friends from harsh cold weather.
@@ -54,13 +55,13 @@ export default function Home() {
               <div className="flex flex-col sm:flex-row gap-4">
                 <Link
                   href="/products"
-                  className="bg-blue-600 text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-blue-700 transition text-center"
+                  className="bg-pink-600 text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-blue-700 transition text-center"
                 >
                   Shop Now 🛒
                 </Link>
                 <Link
                   href="#about"
-                  className="border-2 border-blue-600 text-blue-600 px-8 py-4 rounded-lg text-lg font-semibold hover:bg-blue-50 transition text-center"
+                  className="border-2 border-pink-600 text-pink-600 px-8 py-4 rounded-lg text-lg font-semibold hover:bg-blue-50 transition text-center"
                 >
                   Learn More
                 </Link>
@@ -86,7 +87,7 @@ export default function Home() {
 
           <div className="grid md:grid-cols-3 gap-8">
             {/* Feature 1 */}
-            <div className="bg-blue-50 rounded-xl p-8 hover:shadow-xl transition transform hover:-translate-y-2">
+            <div className="bg-pink-100 rounded-xl p-8 hover:shadow-xl transition transform hover:-translate-y-2">
               <div className="text-6xl mb-4">🧥</div>
               <h3 className="text-2xl font-bold text-gray-900 mb-3">Premium Quality</h3>
               <p className="text-gray-600">
@@ -95,7 +96,7 @@ export default function Home() {
             </div>
 
             {/* Feature 2 */}
-            <div className="bg-blue-50 rounded-xl p-8 hover:shadow-xl transition transform hover:-translate-y-2">
+            <div className="bg-pink-200 rounded-xl p-8 hover:shadow-xl transition transform hover:-translate-y-2">
               <div className="text-6xl mb-4">🏆</div>
               <h3 className="text-2xl font-bold text-gray-900 mb-3">Vet Approved</h3>
               <p className="text-gray-600">
@@ -104,7 +105,7 @@ export default function Home() {
             </div>
 
             {/* Feature 3 */}
-            <div className="bg-blue-50 rounded-xl p-8 hover:shadow-xl transition transform hover:-translate-y-2">
+            <div className="bg-pink-100 rounded-xl p-8 hover:shadow-xl transition transform hover:-translate-y-2">
               <div className="text-6xl mb-4">🚚</div>
               <h3 className="text-2xl font-bold text-gray-900 mb-3">Fast Delivery</h3>
               <p className="text-gray-600">
@@ -132,7 +133,7 @@ export default function Home() {
                 key={product._id || index}
                 className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition transform hover:-translate-y-2"
               >
-                <div className={`h-48 bg-gradient-to-br ${product.gradient || gradientColors[index % gradientColors.length]} flex items-center justify-center text-8xl`}>
+                <div className={`h-48 bg-linear-to-br ${product.gradient || gradientColors[index % gradientColors.length]} flex items-center justify-center text-8xl`}>
                   {product.emoji}
                 </div>
               <div className="p-6">
@@ -140,7 +141,7 @@ export default function Home() {
                   <h3 className="text-xl font-bold text-gray-900">
                     {product.title}
                   </h3>
-                  <span className="text-xs bg-blue-100 text-blue-800 px-2 py-1 rounded-full">
+                  <span className="text-xs bg-pink-100 text-pink-800 px-2 py-1 rounded-full">
                     {product.category}
                   </span>
                 </div>
@@ -154,7 +155,7 @@ export default function Home() {
                   {/* LINK TO DYNAMIC ID PAGE */}
                     <Link 
                       href={`/products/${product._id}`} 
-                      className="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition"
+                      className="bg-pink-600 text-white px-4 py-2 rounded-lg hover:bg-pink-700 transition"
                     >
                       View
                     </Link>
@@ -174,68 +175,10 @@ export default function Home() {
         </div>
       </div>
     </section>
-      {/* 4. TESTIMONIALS SECTION */}
-      <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">What Pet Parents Say</h2>
-            <p className="text-xl text-gray-600">Real reviews from happy customers</p>
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-8">
-            {/* Testimonial 1 */}
-            <div className="bg-blue-50 rounded-xl p-8 hover:shadow-xl transition">
-              <div className="flex items-center mb-4">
-                <div className="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center text-white text-xl font-bold">
-                  S
-                </div>
-                <div className="ml-4">
-                  <h4 className="font-bold text-gray-900">Sarah Johnson</h4>
-                  <div className="text-yellow-500">⭐⭐⭐⭐⭐</div>
-                </div>
-              </div>
-              <p className="text-gray-600 italic">
-                "The winter coat is amazing! My Golden Retriever loves wearing it and stays warm during our morning walks."
-              </p>
-            </div>
-
-            {/* Testimonial 2 */}
-            <div className="bg-blue-50 rounded-xl p-8 hover:shadow-xl transition">
-              <div className="flex items-center mb-4">
-                <div className="w-12 h-12 bg-purple-600 rounded-full flex items-center justify-center text-white text-xl font-bold">
-                  M
-                </div>
-                <div className="ml-4">
-                  <h4 className="font-bold text-gray-900">Mike Chen</h4>
-                  <div className="text-yellow-500">⭐⭐⭐⭐⭐</div>
-                </div>
-              </div>
-              <p className="text-gray-600 italic">
-                "Finally found boots that actually stay on! Great quality and my husky can run comfortably in the snow."
-              </p>
-            </div>
-
-            {/* Testimonial 3 */}
-            <div className="bg-blue-50 rounded-xl p-8 hover:shadow-xl transition">
-              <div className="flex items-center mb-4">
-                <div className="w-12 h-12 bg-green-600 rounded-full flex items-center justify-center text-white text-xl font-bold">
-                  E
-                </div>
-                <div className="ml-4">
-                  <h4 className="font-bold text-gray-900">Emily Rodriguez</h4>
-                  <div className="text-yellow-500">⭐⭐⭐⭐⭐</div>
-                </div>
-              </div>
-              <p className="text-gray-600 italic">
-                "Best investment for winter! The nutrition pack has really helped my senior dog maintain energy levels."
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
+      
 
       {/* 5. WINTER CARE TIPS SECTION */}
-      <section className="py-20 bg-gradient-to-br from-blue-600 to-blue-800 text-white">
+      <section className="py-20 bg-linear-to-br from-blue-600 to-blue-800 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold mb-4">Winter Care Tips</h2>
@@ -300,9 +243,17 @@ export default function Home() {
                 </div>
               </div>
             </div>
-            <div className="bg-gradient-to-br from-blue-400 to-blue-600 rounded-2xl p-12 text-center">
-              <div className="text-9xl mb-4">🐕</div>
-              <p className="text-white text-xl font-semibold">Your Dog's Winter Wellness Matters to Us</p>
+            <div className="bg-linear-to-br from-blue-400 to-blue-600 rounded-2xl p-12 text-center">
+              <div className="text-9xl flex  justify-center mb-4">
+               <Image
+                src="/images/images.png" 
+      alt="Dog Sticker" 
+      width={320} 
+      height={320}
+      className="object-contain"
+               />
+              </div>
+              <p className="text-white text-xl font-semibold">Your Dogs Winter Wellness Matters to Us</p>
             </div>
           </div>
         </div>
@@ -346,6 +297,9 @@ export default function Home() {
           <p className="mt-6 text-gray-500">Free shipping on orders over $50 • 30-day money-back guarantee</p>
         </div>
       </section>
+
+      {/* People review section this part  */}
+      <Review></Review>
     </div>
   );
 }

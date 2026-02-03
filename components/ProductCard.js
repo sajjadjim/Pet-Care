@@ -18,7 +18,7 @@ export default function ProductCard({ product }) {
 
   return (
     <div className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition transform hover:-translate-y-2">
-      <div className={`h-48 bg-gradient-to-br ${product.gradient || 'from-blue-400 to-blue-600'} flex items-center justify-center text-8xl`}>
+      <div className={`h-48 bg-linear-to-br ${product.gradient || 'from-blue-400 to-blue-600'} flex items-center justify-center text-8xl`}>
         {product.emoji || randomEmoji}
       </div>
      <div className="p-6">
