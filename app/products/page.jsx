@@ -10,7 +10,7 @@ const ProductSkeleton = () => (
     <div className="h-48 w-full bg-gray-200 rounded-2xl animate-pulse mb-6 flex items-center justify-center">
       <span className="text-4xl opacity-20">🐾</span>
     </div>
-    <div className="px-2 space-y-4 flex-grow">
+    <div className="px-2 space-y-4 grow">
       <div className="flex justify-between">
         <div className="h-6 w-2/3 bg-gray-200 rounded-lg animate-pulse"></div>
         <div className="h-4 w-10 bg-gray-100 rounded-md animate-pulse"></div>
