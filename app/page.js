@@ -35,9 +35,37 @@ export default function Home() {
       });
   }, []);
 
-  if (loading) {
-    return <div className="py-20 text-center">Loading...</div>;
-  }
+if (loading) {
+  return (
+    <div className="min-h-[60vh] flex flex-col items-center justify-center">
+      <div className="relative">
+        {/* Main Animation */}
+        <div className="text-7xl animate-bounce mb-4 select-none">
+          🐾
+        </div>
+        
+        {/* Animated Shadow */}
+        <div className="w-12 h-2 bg-gray-200 rounded-full mx-auto blur-sm animate-pulse scale-x-125"></div>
+      </div>
+
+      <div className="mt-8 text-center">
+        <h2 className="text-2xl font-black text-gray-900 tracking-tight">
+          Fetching the Best...
+        </h2>
+        <p className="text-gray-500 font-medium mt-1">
+          Preparing your pet care essentials
+        </p>
+      </div>
+
+      {/* Modern Circular Spinner */}
+      <div className="mt-6 flex gap-1.5">
+        <div className="w-2 h-2 bg-blue-600 rounded-full animate-bounce [animation-delay:-0.3s]"></div>
+        <div className="w-2 h-2 bg-blue-600 rounded-full animate-bounce [animation-delay:-0.15s]"></div>
+        <div className="w-2 h-2 bg-blue-600 rounded-full animate-bounce"></div>
+      </div>
+    </div>
+  );
+}
 
   return (
     <div className="pt-16">

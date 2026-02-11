@@ -1,7 +1,7 @@
 import { NextResponse } from 'next/server';
 import clientPromise from '@/lib/mongodb';
 
-const DB_NAME = 'Pet_Care'; // Exactly as you specified
+const DB_NAME = 'Pet_Care';
 
 export async function GET(request) {
   try {
@@ -12,8 +12,11 @@ export async function GET(request) {
     const category = searchParams.get('category');
     const search = searchParams.get('search');
 
+    // Build Dynamic Query
     let query = {};
-    if (category) query.category = category;
+    if (category && category !== 'all') {
+      query.category = category;
+    }
     if (search) {
       query.title = { $regex: search, $options: 'i' }; 
     }
@@ -25,7 +28,7 @@ export async function GET(request) {
       .toArray();
 
     return NextResponse.json({ 
-      success: true,
+      success: true, 
       products 
     }, { status: 200 });
 
@@ -37,24 +40,17 @@ export async function GET(request) {
 export async function POST(request) {
   try {
     const body = await request.json();
-    const { title, price, category, image, createdBy } = body;
-
-    if (!title || !price || !category || !createdBy) {
-      return NextResponse.json({ success: false, error: 'Missing required fields' }, { status: 400 });
-    }
-
     const client = await clientPromise;
     const db = client.db(DB_NAME);
     
-    const productData = {
+    const newProduct = {
       ...body,
-      price: Number(parseFloat(price).toFixed(2)),
+      price: Number(parseFloat(body.price).toFixed(2)),
       createdAt: new Date(),
     };
     
-    const result = await db.collection('products').insertOne(productData);
-    return NextResponse.json({ success: true, productId: result.insertedId }, { status: 201 });
-
+    const result = await db.collection('products').insertOne(newProduct);
+    return NextResponse.json({ success: true, id: result.insertedId }, { status: 201 });
   } catch (error) {
     return NextResponse.json({ success: false, error: error.message }, { status: 500 });
   }

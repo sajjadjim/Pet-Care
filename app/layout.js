@@ -7,8 +7,8 @@ import Footer from '@/components/Footer';
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata = {
-  title: 'Winter Dog Care - Premium Products',
-  description: 'Keep your furry friends warm and happy this winter',
+  title: 'Pet Care | Premium Products',
+  description: 'Keep your furry ........',
 };
 
 export default function RootLayout({ children }) {
