@@ -1,7 +1,7 @@
-# 🐕❄️ Winter Dog Care - Next.js Application
+# 🐕❄️ Pet Care - Next.js Application
 
-# Live site: Go to [Winter Dog Care](https://winter-dog-care-01.vercel.app)
-A modern, responsive web application for winter dog care products built with Next.js and Firebase.
+# Live site: Go to [Pet Care](https://pet-care-own.vercel.app)
+A modern, responsive web application for pet care products built with Next.js and Firebase.
 
 ## 🌟 Features
 
@@ -33,17 +33,14 @@ A modern, responsive web application for winter dog care products built with Nex
 
 ## 🚀 Setup & Installation
 
-### Prerequisites
-- Node.js 18+ installed
-- Firebase account
-- Git installed
+
 
 ### Installation Steps
 
 1. **Clone the repository**
 ```bash
-git clone YOUR_REPO_URL
-cd my-skills-app
+git clone https://github.com/sajjadjim/Pet-Care
+cd pet-care
 ```
 
 2. **Install dependencies**
@@ -80,7 +77,7 @@ Navigate to [http://localhost:3000](http://localhost:3000)
 ### Deploy to Vercel
 
 1. Push code to GitHub
-2. Go to [vercel.com](https://winter-dog-care-01.vercel.app)
+2. Go to [vercel.com](https://vercel.com)
 3. Import your repository
 4. Add environment variables
 5. Deploy!
@@ -97,4 +94,4 @@ Navigate to [http://localhost:3000](http://localhost:3000)
 
 ## 👤 Created By
 
-[Tumpa Das]
+[Sajjad Hossain Jim](https://github.com/sajjadjim)
