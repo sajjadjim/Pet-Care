@@ -1,5 +1,4 @@
 'use client';
-
 import { useAuth } from '@/context/AuthContext';
 import { useRouter } from 'next/navigation';
 import { useEffect, useState } from 'react';
@@ -7,8 +6,6 @@ import { useEffect, useState } from 'react';
 export default function LoginPage() {
 const { user, signInWithGoogle, signInWithEmail, signUpWithEmail, loading } = useAuth();
   const router = useRouter();
-
-
 
 const [isSignUp, setIsSignUp] = useState(false);
 const [formData, setFormData] = useState({
@@ -58,7 +55,6 @@ if (loading) {
     </div>
   );
 };
-
 
   const handleInputChange = (e) => {
   setFormData({

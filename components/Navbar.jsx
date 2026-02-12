@@ -1,13 +1,10 @@
 'use client';
-
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { useAuth } from '@/context/AuthContext';
 import { useRouter } from 'next/navigation';
 import { FaHome , FaProductHunt , FaPhoneSquareAlt } from "react-icons/fa";
 import { IoInformationCircle } from "react-icons/io5";
-
-
 
 export default function Navbar() {
   const { user, signOut } = useAuth();

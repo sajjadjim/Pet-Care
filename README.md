@@ -42,7 +42,10 @@ A modern, responsive web application for pet care products built with Next.js an
 git clone https://github.com/sajjadjim/Pet-Care
 cd pet-care
 ```
-
+**Navigate to the project directory**
+```bash
+cd pet-care
+```
 2. **Install dependencies**
 ```bash
 npm install

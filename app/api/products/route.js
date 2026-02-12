@@ -2,7 +2,6 @@ import { NextResponse } from 'next/server';
 import clientPromise from '@/lib/mongodb';
 
 const DB_NAME = 'Pet_Care';
-
 export async function GET(request) {
   try {
     const client = await clientPromise;
@@ -36,7 +35,6 @@ export async function GET(request) {
     return NextResponse.json({ success: false, error: error.message }, { status: 500 });
   }
 }
-
 export async function POST(request) {
   try {
     const body = await request.json();
@@ -45,7 +43,7 @@ export async function POST(request) {
     
     const newProduct = {
       ...body,
-      price: Number(parseFloat(body.price).toFixed(2)),
+      price: Number(`parseFloat(${body.price}).toFixed(2)`),
       createdAt: new Date(),
     };
     
